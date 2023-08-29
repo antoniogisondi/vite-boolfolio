@@ -29,7 +29,27 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col-12">
-
+                    <div class="card mb-3" v-for="project in projects" :key="project.id">
+                        <div class="card-header">
+                            <h3>{{ project.titolo }}</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>{{ project.descrizione }}</p>
+                            <ul>
+                                <li><strong>Data inizio:</strong> {{ project.inizio_progetto }}</li>
+                                <li><strong>Data consegna:</strong> {{ project.consegna_progetto }}</li>
+                                <li v-if="project.approvato == 1">
+                                    Il progetto è stato approvato
+                                </li>
+                                <li v-else-if="project.non_approvato == 1">
+                                    Il progetto non è stato approvato
+                                </li>
+                                <li v-else>
+                                    Il progetto è scaduto
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
