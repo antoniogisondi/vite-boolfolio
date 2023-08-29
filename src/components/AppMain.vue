@@ -3,14 +3,23 @@ import axios from 'axios';
 export default {
     data() {
         return {
-
+            basicUrl: 'http://localhost:8000',
+            projects: [],
         }
     },
     created() {
-
+        this.getProjects()
     },
     methods: {
+        getProjects() {
+            axios.get(`${this.basicUrl}/api/projects`).then((response) => {
+                console.log(response)
+                if (response.data.success) {
+                    this.projects = response.data.results
+                }
 
+            })
+        }
     },
 }
 </script>
