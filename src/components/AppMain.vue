@@ -47,6 +47,10 @@ export default {
                                 <li v-else>
                                     Il progetto è scaduto
                                 </li>
+                                <li><strong>Tipologia di progetto:</strong> {{ project.type.name }}</li>
+                                <li v-for="technology in project.technologies" :key="technology.id">
+                                    <span class="badge text-bg-primary">{{ technology.technology_name }}</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
