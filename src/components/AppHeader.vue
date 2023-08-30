@@ -1,6 +1,34 @@
 <script>
 export default {
+    components: {
 
+    },
+    data() {
+        return {
+            menuItems: [
+                {
+                    label: 'Home',
+                    route_name: 'homepage'
+                },
+                {
+                    label: 'Progetti',
+                    route_name: 'projects'
+                },
+                {
+                    label: 'Tipologie di progetti',
+                    route_name: 'projects_type'
+                },
+                {
+                    label: 'Tecnologie',
+                    route_name: 'technology'
+                },
+                {
+                    label: 'Chi siamo',
+                    route_name: 'about_us'
+                },
+            ],
+        }
+    },
 }
 </script>
 
@@ -19,20 +47,8 @@ export default {
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                                 <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Progetti</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Tipologie di progetti</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Tecnologie</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Chi siamo</a>
+                                    <li class="nav-item" v-for="(item, index) in menuItems" :key="index">
+                                        <a class="nav-link" href="#">{{ item.label }}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -42,7 +58,6 @@ export default {
             </div>
         </div>
     </header>
-    <hr>
 </template>
 
 <style lang="scss"></style>
