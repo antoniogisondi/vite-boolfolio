@@ -23,17 +23,15 @@ export default {
 }
 </script>
 <template lang="">
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Boolfolio - Tipologie di progetti</h1>
-                </div>
-                <div class="col-12">
-                    <div class="card mb-3" v-for="type in store.types" :key="type.id">
-                        <div class="card-body">
-                            <h3>{{ type.name }}</h3>
-                        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Boolfolio - Tipologie di progetti</h1>
+            </div>
+            <div class="col-12">
+                <div class="card mb-3" v-for="type in store.types" :key="type.id">
+                    <div class="card-body">
+                        <h3>{{ type.name }}</h3>
                     </div>
                 </div>
             </div>
