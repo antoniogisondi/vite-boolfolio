@@ -4,6 +4,7 @@ import { store } from '../store';
 export default {
     data() {
         return {
+            store,
             currentPage: 1,
             lastPage: null
         }
@@ -15,7 +16,7 @@ export default {
         getProjects(num_page) {
             axios.get(`${this.store.basicUrl}/api/projects`, { params: { page: num_page } }).then((response) => {
                 if (response.data.success) {
-                    store.projects = response.data.results.data
+                    this.store.projects = response.data.results.data
                     this.currentPage = response.data.results.current_page
                     this.lastPage = response.data.results.last_page
                 }
@@ -28,10 +29,10 @@ export default {
 
 <template>
     <main>
-        <div class="container">
+        <div class="container mt-5">
             <div class="row">
                 <div class="col-12">
-                    <div class="card mb-3" v-for="project in projects" :key="project.id">
+                    <div class="card mb-3" v-for="project in store.projects" :key="project.id">
                         <div class="card-header">
                             <h3>{{ project.titolo }}</h3>
                         </div>
