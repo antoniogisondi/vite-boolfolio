@@ -10,10 +10,8 @@ export default {
 </script>
 
 <template>
-  <div class="container-fluid">
-    <AppHeader />
-    <AppMain />
-  </div>
+  <AppHeader />
+  <AppMain />
 </template>
 
 <style lang="scss">
