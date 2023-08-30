@@ -29,9 +29,12 @@ export default {
 
 <template>
     <main>
-        <div class="container mt-5">
+        <div class="container mt-4">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 d-flex justify-content-center">
+                    <h1>Boolfolio - Projects</h1>
+                </div>
+                <div class="col-12 mt-3">
                     <div class="card mb-3" v-for="project in store.projects" :key="project.id">
                         <div class="card-header">
                             <h3>{{ project.titolo }}</h3>
