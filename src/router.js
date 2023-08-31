@@ -5,6 +5,7 @@ import ProjectList from './pages/ProjectList.vue';
 import ProjectTypeList from './pages/ProjectTypeList.vue';
 import TechnologyList from './pages/TechnologyList.vue';
 import AboutUs from './pages/AboutUs.vue';
+import SingleProject from './pages/SingleProject.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -33,6 +34,11 @@ const router = createRouter({
             path: '/about-us',
             name: 'about_us',
             component: AboutUs
+        },
+        {
+            path: '/projects/:slug',
+            name: 'single_project',
+            component: SingleProject
         }
     ]
 });
