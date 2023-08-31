@@ -6,6 +6,7 @@ import ProjectTypeList from './pages/ProjectTypeList.vue';
 import TechnologyList from './pages/TechnologyList.vue';
 import AboutUs from './pages/AboutUs.vue';
 import SingleProject from './pages/SingleProject.vue';
+import NotFound from './pages/NotFound.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -39,6 +40,15 @@ const router = createRouter({
             path: '/projects/:slug',
             name: 'single_project',
             component: SingleProject
+        },
+        {
+            path: '/page-not-found',
+            name: 'not_found',
+            component: NotFound
+        },
+        {
+            path: '/:catchAll(.*)',
+            redirect: '/page-not-found'
         }
     ]
 });

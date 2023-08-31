@@ -22,7 +22,7 @@ export default {
             
         </div>
         <div class="card-footer">
-            <a href="#" class="btn btn-sm btn-primary">Dettaglio progetto</a>
+            <router-link class="btn btn-sm btn-primary" :to=" { name: 'single_project', params: { slug: project.slug }}">Leggi l'articolo</router-link>
         </div>
     </div>
 </template>
