@@ -13,7 +13,7 @@ export default {
     },
     methods: {
         getSingleProjects() {
-            axios.get(`${this.store.basicUrl}/api/${this.$route.params.slug}`).then((response) => {
+            axios.get(`${this.store.basicUrl}/api/${this.$route.params.titolo}`).then((response) => {
                 if (response.data.success) {
                     this.project = response.data.project
                 }
@@ -34,28 +34,28 @@ export default {
                 <div class="col-12 text-center mb-4">
                     <div class="card">
                         <div class="card-header">
-                            <h1>{{ project.titolo }}</h1>
+                            <h1>{{ this.project.titolo }}</h1>
                         </div>
                         <div class="card-body">
                             <div class="col-12 mb-3">
-                                <p v-if="project.descrizione">{{ project.descrizione }}</p>
+                                <p v-if="this.project.descrizione">{{ this.project.descrizione }}</p>
                                 <p v-else>Descrizione non disponibile</p>
                             </div>
-                            <div class="col-12 mb-3" v-if="project.img">
-                                <img :src="`${store.baseUrl}/storage/${project.img}`" class="w-50">
+                            <div class="col-12 mb-3" v-if="this.project.img">
+                                <img :src="`${store.basicUrl}/storage/${this.project.img}`" class="w-50">
                             </div>
                             <div v-else>
                                 Immagine non disponibile
                             </div>
-                            <div class="col-12" v-if="project.type">
-                                <strong>Tipologia:</strong> {{ project.type }}
+                            <div class="col-12" v-if="this.project.type">
+                                <strong>Tipologia:</strong> {{ this.project.type }}
                             </div>
                             <div class="col-12" v-else>
                                 Tipologia di progetto non disponibile
                             </div>
-                            <div class="col-12 my-2" v-if="project.technologies">
+                            <div class="col-12 my-2" v-if="this.project.technologies">
                                 <strong>Tecnologia:</strong> 
-                                <span class="badge text-bg-primary mx-1" v-for="tech in project.technologies">
+                                <span class="badge text-bg-primary mx-1" v-for="tech in this.project.technologies">
                                     {{ tech.technology_name }}
                                 </span>
                             </div>

@@ -28,7 +28,7 @@ export default {
                 <h1>Boolfolio - Tecnologie</h1>
             </div>
             <div class="col-12">
-                <div class="card mb-3" v-for="tech in store.technologies" :key="tech.id">
+                <div class="card mb-3" v-for="tech in this.store.technologies" :key="tech.id">
                     <div class="card-body">
                         <h3>{{ tech.technology_name }}</h3>
                     </div>
