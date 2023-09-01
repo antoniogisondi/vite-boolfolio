@@ -38,7 +38,7 @@ export default {
                 <div class="col-12 d-flex justify-content-center">
                     <h1>Boolfolio - Projects</h1>
                 </div>
-                <div class="col-12 mt-3" v-for="project in this.store.projects" :key="project.id">
+                <div class="col-6 mt-3" v-for="project in this.store.projects" :key="project.id">
                     <ProjectCard :project="project" />
                 </div>
                 <div class="col-12 d-flex justify-content-center">
