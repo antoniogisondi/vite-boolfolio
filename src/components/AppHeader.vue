@@ -26,6 +26,10 @@ export default {
                     label: 'Chi siamo',
                     route_name: 'about_us'
                 },
+                {
+                    label: 'Contattaci',
+                    route_name: 'ask_us'
+                }
             ],
         }
     },

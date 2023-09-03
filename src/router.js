@@ -7,6 +7,8 @@ import TechnologyList from './pages/TechnologyList.vue';
 import AboutUs from './pages/AboutUs.vue';
 import SingleProject from './pages/SingleProject.vue';
 import NotFound from './pages/NotFound.vue';
+import AskUs from './pages/AskUs.vue';
+import ThankYou from './pages/ThankYou.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -45,6 +47,16 @@ const router = createRouter({
             path: '/page-not-found',
             name: 'not_found',
             component: NotFound
+        },
+        {
+            path: '/contact-us',
+            name: 'ask_us',
+            component: AskUs
+        },
+        {
+            path: '/thanks',
+            name: 'thanks',
+            component: ThankYou
         },
         {
             path: '/:catchAll(.*)',
